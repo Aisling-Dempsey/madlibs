@@ -37,7 +37,30 @@ def greet_person():
     return render_template("compliment.html",
                            person=player,
                            compliment=compliment)
+@app.route('/game')
+def show_game_form():
 
+    response = request.args.get("game")
+
+    if response == 'no':
+        return render_template('goodbye.html')
+    else:
+        return render_template('game.html')
+
+@app.route('/madlib')
+def show_madlib():
+    name = request.args.get("person")
+    shade = request.args.get("color")
+    thing = request.args.get("noun")
+    dudes = request.args.getlist("animal")
+    descriptor = request.args.get("adjective")
+
+    return render_template("madlib.html",
+                            person=name,
+                            color=shade,
+                            noun=thing,
+                            adjective=descriptor,
+                            animal=dudes)
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app
