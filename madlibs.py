@@ -10,7 +10,7 @@ app = Flask(__name__)
 AWESOMENESS = [
     'awesome', 'terrific', 'fantastic', 'neato', 'fantabulous', 'wowza', 'oh-so-not-meh',
     'brilliant', 'ducky', 'coolio', 'incredible', 'wonderful', 'smashing', 'lovely']
-
+MADLIBS = ["madlib1.html", "madlib2.html", "madlib3.html", "madlib4.html", "madlib5.html"]
 
 @app.route('/')
 def start_here():
@@ -54,13 +54,17 @@ def show_madlib():
     thing = request.args.get("noun")
     dudes = request.args.getlist("animal")
     descriptor = request.args.get("adjective")
-
-    return render_template("madlib.html",
+    if len(dudes) > 1:
+        if len(dudes) > 2:
+            for i in range(len(dudes)-1):
+                dudes[i] = dudes[i] + ", "
+        dudes[-1] = "and " + dudes[-1]
+    return render_template(choice(MADLIBS),
                             person=name,
                             color=shade,
                             noun=thing,
                             adjective=descriptor,
-                            animal=dudes)
+                            animals=dudes)
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app

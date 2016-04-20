@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <title>The game! (you just lost it)</title>
+</head>
+<body>
+    <form action='/madlib'>
+        <ul>
+            <li>Person:
+                <input type="text" name="person">
+            </li>
+
+            <li>Pick a color:
+                <input type="radio" name="color" value="teal">Teal
+                <input type="radio" name="color" value="peach">Peach
+                <input type="radio" name="color" value="green">Green
+                <input type="radio" name="color" value="royal-purple">Royal Purple
+                <input type="radio" name="color" value="sparkly">Sparkly
+            </li>
+            
+            <li>Noun (person, place, or thing):
+                <input type="text" name="noun">
+            </li>
+
+            <li>Adjective:
+                <select name="adjective">
+                    <option value="slippery">Slippery</option>
+                    <option value="furry">Furry</option>
+                    <option value="moist">Moist (like cake, pervert)</option>
+                    <option value="shiny">Shiny</option>
+                    <option value="rough">Rough</option>
+                </select>
+            </li>
+
+            <li>Animals:
+                <input type="checkbox" name="animal" value="hedgehogs">Hedgehogs
+                <input type="checkbox" name="animal" value="piglets">Piglets
+                <input type="checkbox" name="animal" value="sloths">Sloths
+                <input type="checkbox" name="animal" value="kittens">Kittens
+            </li>
+        </ul>
+     <input type="submit">
+    </form>
+</body>
+</html>

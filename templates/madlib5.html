@@ -1,0 +1,16 @@
+<html>
+<!doctype html>
+<head>
+  <title>Story time!</title>
+  <link rel="stylesheet" href="static/madlibs.css"
+</head>
+<body>
+    <p>In the frozen tundra of {{ color }} Antarctica, penguins guard {{ noun }}s in their nest as a way to impress a potential mate. Last year, {{ person }} visited the {{ adjective }} land.</p>
+    
+    <p>
+        They made a fool of themselves by thinking the penguins were 
+        {% for animal in animals %}
+        {{ animal }} {% endfor %} and tried to cuddle them.</p>
+
+</body>
+</html>
